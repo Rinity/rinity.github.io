@@ -1,0 +1,49 @@
+<!-- Portfolio Grid Section -->
+<section id="survey" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Kerdőív</h2>
+
+                <h3 class="section-subheading text-muted">Legyél te is része a forradalomnak! Segítségeddel még jobb,
+                    még tökéletesebb szolgáltatást tudunk építeni! Segíts, hogy jobban megismerjük a szokásaitokat. Minden válasz számít!</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <form action="http://formspree.io/info@rinity.com">
+                    <div class="row">
+                        <ol>
+                            {% for question in site.survey %}
+                            <li>
+                                <label for="">{{ question.question }}</label>
+                            </li>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="{{question.name}}">
+                            </div>
+                            {% if question.questions %}
+                            <ol>
+                                {% for subquestion in question.questions %}
+                                <li>
+                                    <label for="">{{ subquestion.question }}</label>
+                                </li>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="{{subquestion.name}}">
+                                </div>
+                                {% endfor %}
+                            </ol>
+                            {% endif %}
+
+                            {% endfor %}
+                        </ol>
+
+
+                        <div class="col-lg-12 text-center">
+                            <input type="submit" value="Elküldés" class="btn btn-xl">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

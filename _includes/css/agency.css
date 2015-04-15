@@ -174,9 +174,12 @@ fieldset[disabled] .btn-xl.active {
     border-color: transparent;
     background-color: #222;
 }
-
+@font-face {
+  font-family: 'Makimango';
+  src: url('{{ site.baseurl }}css/fonts/makimango/MAKIMANG.TTF') format('truetype');
+}
 .navbar-default .navbar-brand {
-    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+    font-family: "Makimango"; /*, "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;*/
     color: #{{ site.color.primary }};
 }
 
@@ -242,10 +245,13 @@ fieldset[disabled] .btn-xl.active {
     }
 
     .navbar-default .navbar-brand {
-        font-size: 2em;
+        font-size: 6em;
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
         transition: all .3s;
+/*        -webkit-text-fill-color: black;*/
+        -webkit-text-stroke-color: white; /*#{{site.color.secondary-dark}}*/
+        -webkit-text-stroke-width: 2.00px; 
     }
 
     .navbar-default .navbar-nav>.active>a {
@@ -258,7 +264,7 @@ fieldset[disabled] .btn-xl.active {
     }
 
     .navbar-default.navbar-shrink .navbar-brand {
-        font-size: 1.5em;
+        font-size: 3em;
     }
 }
 
@@ -266,7 +272,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(../img/header-bg.jpg);
+    background-image: url(../img/4.jpg);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;

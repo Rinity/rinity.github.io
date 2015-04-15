@@ -1,22 +1,25 @@
-url: https://y7kim.github.io
-baseurl: /agency-jekyll-theme/
+url: https://rinity.github.io
+baseurl:
 
 # Site settings
-title: Awesome Title
-email: your-email@domain.com
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+title: Rinity
+email: info@rinity.com
+description: Rinity - social ride sharing for the enterprise
 
 # Color settings (hex-codes without the leading hash-tag)
 color:
-  primary: fed136
-  secondary: fec503  
-  secondary-dark: 333
+  #  primary: fed136
+  #  secondary: fec503
+  #  secondary-dark: 333
+  primary: A6DFF6 #59595A
+  secondary-dark: 392e42
+  secondary: cb5467
 
 # Team names, titles and social links
 people:
-- name: Kay Garland
+- name: Szabó Károly
   pic: 1
-  position: Lead Designer
+  position: Social Coordinator
   social:
     - title: twitter
       url: #
@@ -25,20 +28,20 @@ people:
     - title: stack-overflow
       url: #
 
-- name: Larry Parker
+- name: Nagy Csaba
   pic: 2
-  position: Lead Marketer
+  position: Running around crazy
   social:
     - title: twitter
-      url: #
+      url: http://twitter.com/icnagy
     - title: facebook
-      url: #
+      url: http://facebook.com/istvancsabanagy
     - title: linkedin
       url: #
 
-- name: Diana Petersen
+- name: Hajnal Ádám
   pic: 3
-  position: Lead Developer
+  position: CFO
   social:
     - title: twitter
       url: #
@@ -50,20 +53,70 @@ people:
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
   - title: twitter
-    url: http://twitter.com/jekyllrb
+    url: http://twitter.com/rinity
   - title: facebook
-    url:
-  - title: stack-overflow
-    url: http://stackoverflow.com/questions/tagged/jekyll
-  - title: bitbucket 
-    url: http://bitbucket.org/jekyll
-  - title: github
-    url: http://github.com/jekyll
+    url: https://facebook.com/rinity
 
 # Postal address (add as many lines as necessary)
 address:
   - line: 3481 Melrose Place
   - line: Beverly Hills, CA 90210
+
+#survey
+survey:
+  - question: "Hány éves vagy?"
+    name: user_age
+  - question: "Hol laksz?"
+    name: user_city
+  - question: "Milyen messze jársz dolgozni?"
+    name: user_commute_destination
+  - question: "Hogyan jársz munkába? Autóval / Tömegközlekedéssel / Szervezett busszal / Gyalog / Biciklivel"
+    name: user_commute_drive_or_bus
+  - question: "Segítettél már kollégádnak munkába- vagy hazajutni? Vagy kértél-e már segítséget kollégától haza vagy az irodába jutni?"
+    name: user_commute_ride_share
+  - question: "Stoppoltál-e vagy vettél-e már fel stoppost?"
+    name: user_ride_share
+    questions:
+#    - question: "With whom did you share your ride?"
+#      name: commute_ride_share_who
+#    - question: "Why did you share it? (I was asked to/didn’t have money/far from station/etc) Why didn’t you share it?"
+#      name: commute_ride_share_why
+    - question: "What did you like about that trip?"
+      name: commute_ride_share_like
+    - question: "What did you not like about that trip?"
+      name: commute_ride_share_not_like
+#    - question: "Rendszeresen stoppolsz vagy veszel fel stopposokat?"
+#      name: commute_ride_share_regular
+    - question: "Milyen gyakran stoppolsz vagy veszel fel stopposokat?"
+      name: commute_ride_share_recurring
+    - question: "Kellett-e fizetned érte, vagy kérsz-e pénzt érte?"
+      name: commute_ride_share_pay
+  - question: "Amennyiben van autód, könnyen találsz parkolóhelyet az munkahelyeden?"
+    name: commute_ride_share_parking
+  - question: "Környezettudatosnak vallod magad?"
+    name: user_is_green
+  - question: "Használtad-e már az Ubert-t vagy bármilyen autómegosztó szolgáltatást?"
+    name: ride_share_app
+    questions:
+    - question: "Mire használtad az autómegosztó alkalmazást? (Pénzt keresni/Buliba eljutni/Taxi helyett)"
+      name: ride_share_app_why
+    - question: "Mi tetszik benne?"
+      name: ride_share_app_like
+    - question: "Mi nem tetszett benne?"
+      name: ride_share_app_dislike
+    - question: "Min lehetne javítani?"
+      name: ride_share_app_improve
+  - question: "Milyen gyakran tömegközlekedsz?"
+    name: user_public_transport
+  - question: "Ha használod, mire használod a tömegközlekedést?"
+    name: user_public_transport_usage
+    questions:
+    - question: "Mit szeretsz a tömegközlekedésben?"
+      name: user_public_transport_like
+    - question: "Mit nem szeretsz a tömegközlekedésben?"
+      name: user_public_transport_dislike
+    - question: "Állva vagy üllve szeretsz utazni?"
+      name: user_public_transport_seat
 
 # Build settings
 markdown: kramdown
