@@ -42,9 +42,9 @@ $("header").
   animate({opacity: 0}, 1000, function (){
     $(this).css({'background-image': "url('/img/1.jpg')"}).
       animate({opacity: 1}, {duration: 2000}).delay(5000).animate({opacity: 0}, 1000, function (){
-        $(this).css({'background-image': "url('/img/2.jpg')"}).animate({opacity: 1}, {duration: 2000}).delay(5000).animate({opacity: 0}, 1000, function (){
-          $(this).css({'background-image': "url('/img/3.jpg')"}).animate({opacity: 1}, {duration: 2000}).animate({opacity: 1}, {duration: 2000}).delay(5000).animate({opacity: 0}, 1000, function (){
-            $(this).css({'background-image': "url('/img/4.jpg')"}).animate({opacity: 1}, {duration: 2000}).animate({opacity: 1}, {duration: 2000}).delay(5000).animate({opacity: 0}, 1000, function (){
+        $(this).css({'background-image': "url('/img/2_compressed.jpg')"}).animate({opacity: 1}, {duration: 2000}).delay(5000).animate({opacity: 0}, 1000, function (){
+          $(this).css({'background-image': "url('/img/3_compressed.jpg')"}).animate({opacity: 1}, {duration: 2000}).animate({opacity: 1}, {duration: 2000}).delay(5000).animate({opacity: 0}, 1000, function (){
+            $(this).css({'background-image': "url('/img/4_compressed.jpg')"}).animate({opacity: 1}, {duration: 2000}).animate({opacity: 1}, {duration: 2000}).delay(5000).animate({opacity: 0}, 1000, function (){
               $(this).css({'background-image': "url('/img/5.jpg')"}).animate({opacity: 1}, {duration: 2000}).animate({opacity: 1}, {duration: 2000}).delay(5000).animate({opacity: 0}, 1000, function (){
                 $(this).css({'background-image': "url('/img/6.jpg')"}).animate({opacity: 1}, {duration: 2000}).animate({opacity: 1}, {duration: 2000}).delay(5000).animate({opacity: 0}, 1000, function (){
                   $(this).css({'background-image': "url('/img/7.jpg')"}).animate({opacity: 1}, {duration: 2000})}

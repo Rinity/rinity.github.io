@@ -1,4 +1,4 @@
-url: https://rinity.github.io
+url: https://rinity.com
 baseurl:
 
 # Site settings
@@ -18,7 +18,7 @@ color:
 # Team names, titles and social links
 people:
 - name: Szabó Károly
-  pic: 1
+  pic: 1_compressed
   position: Social Coordinator
   social:
     - title: twitter
@@ -29,7 +29,7 @@ people:
       url: #
 
 - name: Nagy Csaba
-  pic: 2
+  pic: 2_compressed
   position: Running around crazy
   social:
     - title: twitter
@@ -40,7 +40,7 @@ people:
       url: #
 
 - name: Hajnal Ádám
-  pic: 3
+  pic: 3_compressed
   position: CFO
   social:
     - title: twitter
