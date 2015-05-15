@@ -81,9 +81,9 @@ survey:
 #      name: commute_ride_share_who
 #    - question: "Why did you share it? (I was asked to/didn’t have money/far from station/etc) Why didn’t you share it?"
 #      name: commute_ride_share_why
-    - question: "What did you like about that trip?"
+    - question: "Szívesen stoppoltál/vetted fel a stoppost?"
       name: commute_ride_share_like
-    - question: "What did you not like about that trip?"
+    - question: "Volt valami amiért megbántad?"
       name: commute_ride_share_not_like
 #    - question: "Rendszeresen stoppolsz vagy veszel fel stopposokat?"
 #      name: commute_ride_share_regular
