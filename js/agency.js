@@ -55,3 +55,37 @@ $("header").
         });
       });
   });
+
+function checkContactForm(){
+  console.log('checkContactForm()');
+  console.log($("#name").val().length > 0);
+  console.log($("#email").val().length > 0);
+  if( $("#name").val().length > 0 && $("#email").val().length >0 )
+    $('#contactForm').submit();
+  else{
+    alert("Minimum a neved és email címed töltsd ki!");
+  }
+}
+function checkPilotForm(){
+  console.log('checkPilotForm()');
+  console.log($("#_replyto").val().length > 0);
+  if( $("#_replyto").val().length > 0  )
+    $('#pilotForm').submit();
+  else{
+    alert("Kérlek add meg az email címed! Köszi!");
+  }
+}
+function checkSurveyForm(){
+  console.log('checkSurveyForm()');
+  var notEmpty = false;
+  var inputs = $('#surveyForm input[type="text"]');
+  for(var x=0; x < inputs.length; x++){
+    notEmpty = notEmpty || inputs[x].value != "";
+  }
+  if(notEmpty){
+    _gs('event', 'Clicked sendsurvey');
+    $('#surveyForm').submit();
+  } else{
+    alert("Kérlek legalább egy mezőt tölts ki!");
+  }
+}

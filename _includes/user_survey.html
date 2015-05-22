@@ -13,7 +13,7 @@
         </div>
         <div class="row hidden" id="survey_block">
             <div class="col-lg-12">
-                <form action="http://formspree.io/info@rinity.com" method="POST">
+                <form action="http://formspree.io/info@rinity.com" method="POST" id="surveyForm">
                     <input type="hidden" name="_next" value="/thankyou.html"/>
                     <div class="row">
                         <ol>
@@ -41,7 +41,7 @@
                         </ol>
                         <div class="col-lg-12 text-center">
                             <input type="submit" value="Elküldés" class="btn
-                            btn-xl" onclick="_gs('event', 'Clicked sendsurvey');return true;">>
+                            btn-xl" onclick="checkSurveyForm();return false;">
                         </div>
                     </div>
                 </form>
