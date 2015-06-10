@@ -13,34 +13,331 @@
         </div>
         <div class="row hidden" id="survey_block">
             <div class="col-lg-12">
-                <form action="http://formspree.io/info@rinity.com" method="POST" id="surveyForm">
+                <form action="http://formspree.io/csaba@rinity.com" method="POST" id="surveyForm">
                     <input type="hidden" name="_next" value="/thankyou.html"/>
                     <div class="row">
                         <ol>
-                            {% for question in site.survey %}
                             <li>
-                                <label for="{{ question.name }}">{{ question.question }}</label>
-                            </li>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="{{question.name}}">
-                            </div>
-                            {% if question.questions %}
-                            <ol>
-                                {% for subquestion in question.questions %}
-                                <li>
-                                    <label for="">{{ subquestion.question }}</label>
-                                </li>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="{{subquestion.name}}">
+                                    <label>Hány éves vagy?</label>
+                                    <input type="text" class="form-control" name="age">
                                 </div>
-                                {% endfor %}
-                            </ol>
-                            {% endif %}
+                            </li>
 
-                            {% endfor %}
+                            <li>
+                                <label>Nemed?</label>
+                                <div class="checkbox">
+                                    <label>
+                                    <input type="radio" name="sex" value="male">Férfi
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                    <input type="radio" name="sex" value="female">Nő
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-group">
+                                    <label>Melyik cégnél dolgozol?</label>
+                                    <input type="text" class="form-control" name="company" >
+                                </div>
+                            </li>
+                            <li>
+                                <label>Van-e autód?</label>
+                                <div class="checkbox">
+                                    <label><input type="radio" name="owns_car" value="yes">Igen, saját</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="radio" name="owns_car" value="company">Igen, céges</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="radio" name="owns_car" value="no">Nincs</label>
+                                </div>
+                            </li>
+                            <li>
+                                <label>
+                                    Beosztásod
+                                </label>
+                                <div class="checkbox">
+                                    <label><input type="radio" name="role" value="subordinate">Beosztott</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="radio" name="role" value="superior">Középvezető</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="radio" name="role" value="manager">Felső vezető</label>
+                                </div>
+                            </li>
+                            <li>
+                                <p>Hány műszakban dolgozol?</p>
+                                <div class="checkbox">
+                                    <label><input type="radio" name="shifts" value="1">1</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="radio" name="shifts" value="2">2</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="radio" name="shifts" value="3">3</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-group">
+                                    <label>Honnan jársz be dolgozni? (Város, utca)</label>
+                                    <input type="text" class="form-control" name="city"/>
+                                </div>
+                            </li>
+                            <li>
+                                <label>Családi állapot?</label>
+
+                                <div class="checkbox">
+                                    <label><input type="radio"  name="family" value="single"/>Egyedülálló</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="radio"  name="family" value="married"/>Házas</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-group">
+                                    <label>Hány gyermeked van?</label>
+                                    <input class="form-control" name="children" type="text"/>
+                                </div>
+                            </li>
+
+                            <li>
+                                <label>Kellett-e már korábban indulnod otthonról autóval azért,</label>
+                                <em>(több választ is megjelölhetsz)</em>
+                                <div class="checkbox">
+                                    <label><input name="driver_early_start" value="1" type="checkbox"/>mert el kellett intézned valamit</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_early_start" value="2" type="checkbox"/>hogy segíts egy kollégádnak beérni a munkahelyére</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_early_start" value="3" type="checkbox"/>mert másképp nem értél volna be időben</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_early_start" value="4" type="checkbox"/>hogy kényelmes parkolóhelyed legyen a cégnél</label>
+                                </div>
+                            </li>
+                            <li>
+                                <label>Ha segítesz a kollégádnak hazajutni, akkor</label>
+                                <em>(több választ is megjelölhetsz)</em>
+                                <div class="checkbox">
+                                    <label><input name="driver_help_destination" value="1" type="checkbox"/>háztól-házig viszed</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_help_destination" value="2" type="checkbox"/>útba eső adott pontig (Tesco, buszpályaudvar, pályaudvar, stb.) viszed?</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_help_destination" value="3" type="checkbox"/>teszel kisebb kitérőt (5 perc)</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_help_destination" value="4" type="checkbox"/>teszel nagyobb kitérőt (10+ perc)</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_help_destination" value="5" type="checkbox"/>nem szoktál segíteni</label>
+                                </div>
+                            </li>
+                            <li>
+                                <label>Milyen gyakorisággal szoktál segíteni a kollégáidnak hazajutni?</label>
+
+                                <div class="checkbox">
+                                    <label><input name="driver_help_to_home_habit" value="1" type="radio"/>rendszeresen napi gyakorisággal</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_help_to_home_habit" value="2" type="radio"/>rendszeresen hetente többször</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_help_to_home_habit" value="3" type="radio"/>havonta párszor</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_help_to_home_habit" value="4" type="radio"/>alkalom adtán</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_help_to_home_habit" value="5" type="radio"/>ha megkérnek</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_help_to_home_habit" value="6" type="radio"/>nem szoktam segíteni</label>
+                                </div>
+                            </li>
+                            <li>
+                                <label>Milyen gyakorisággal szoktál segíteni a kollégáidnak munkába menni?</label>
+
+                                <div class="checkbox">
+                                    <label><input name="driver_help_to_work_habit" value="1" type="radio"/>rendszeresen napi gyakorisággal</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_help_to_work_habit" value="2" type="radio"/>rendszeresen hetente többször</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_help_to_work_habit" value="3" type="radio"/>havonta párszor</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_help_to_work_habit" value="4" type="radio"/>alkalom adtán</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_help_to_work_habit" value="5" type="radio"/>ha megkérnek</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_help_to_work_habit" value="6" type="radio"/>nem szoktam segíteni</label>
+                                </div>
+                            </li>
+
+                            <li>
+                                <label>Sofőrként fogadtál-e már el pénzt egy ilyen útért?</label>
+
+                                <div class="checkbox">
+                                    <label><input name="driver_accepts_payment" value="yes" type="radio"/>igen</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_accepts_payment" value="no" type="radio"/>nem</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-group">
+                                    <label>Ha igen, mennyit?</label>
+                                    <input class="form-control" name="driver_accepts_payment_amount" type="text"/>
+                                </div>
+                            </li>
+                            <li>
+                                <label>Amennyiben rendszeresen napi gyakorisággal segítesz kollégáidnak, akkor megosztjátok az útiköltséget?</label>
+
+                                <div class="checkbox">
+                                    <label><input name="driver_shares_commute_costs" value="yes" type="radio"/>igen</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="driver_shares_commute_costs" value="no" type="radio"/>nem</label>
+                                </div>
+                            </li>
+
+                            <li>
+                                <label>Milyen gyakorisággal kéred meg kollégáidat, hogy segítsenek hazajutni?</label>
+
+                                <div class="checkbox">
+                                    <label><input name="pass_request_to_home_habit" value="1" type="radio"/>rendszeresen napi gyakorisággal</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="pass_request_to_home_habit" value="2" type="radio"/>rendszeresen hetente többször</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="pass_request_to_home_habit" value="3" type="radio"/>havonta párszor</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="pass_request_to_home_habit" value="4" type="radio"/>alkalom adtán</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="pass_request_to_home_habit" value="5" type="radio"/>ha megkérnek</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="pass_request_to_home_habit" value="6" type="radio"/>nem szoktam</label>
+                                </div>
+                            </li>
+
+                            <li>
+                                <label>Milyen gyakorisággal kéred meg kollégáidat, hogy segítsenek munkába jutni?</label>
+
+                                <div class="checkbox">
+                                    <label><input name="pass_request_to_work_habit" value="1" type="radio"/>rendszeresen napi gyakorisággal</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="pass_request_to_work_habit" value="2" type="radio"/>rendszeresen hetente többször</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="pass_request_to_work_habit" value="3" type="radio"/>havonta párszor</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="pass_request_to_work_habit" value="4" type="radio"/>alkalom adtán</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="pass_request_to_work_habit" value="5" type="radio"/>ha megkérnek</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="pass_request_to_work_habit" value="6" type="radio"/>nem szoktam</label>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="form-group">
+                                    <label>Miért kéred meg a kollégákat hogy segítsenek?</label>
+                                    <em>(pl.: lekésnéd a csatlakozást, buszt, vonatot, nincs megfelelő tömegközlekedés a lakóhelyedre, kényelemből, nincs autód, nem szeretsz tömeg-közlekedni, költségmegosztás)</em>
+                                    <input class="form-control" name="pass_request_cause" value="" type="text"/>
+                                </div>
+                            </li>
+
+                            <li>
+                                <label>Utasként adtál-e már pénzt egy ilyen útért?</label>
+
+                                <div class="checkbox">
+                                    <label><input name="pass_gives_payment" value="yes" type="radio"/>igen</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input name="pass_gives_payment" value="no" type="radio"/>nem</label>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="form-group">
+                                    <label>Ha igen, mennyit?</label>
+                                    <input class="form-control" name="pass_gives_payment_amount" type="text"/>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="form-group">
+                                    <label>Szerinted mennyi a reális kompenzáció a sofőrnek egy fuvarért (egy irányban)?</label>
+                                    <input class="form-control" name="price_for_driver_per_ride" type="text"/>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-group">
+                                    <label>Szerinted mennyi a reális ár egy fuvarért utasként (egy irányban)?</label>
+                                    <input class="form-control" name="price_as_pass_per_ride" type="text"/>
+                                </div>
+                            </li>
+                            <li>
+                                <label>Tegyük fel egy kollégádnak segítesz rendszeresen munkába- és hazajárni. Havonta mennyi pénzért csinálnád ezt?</label>
+                                <ol>
+                                    <li>
+                                        <div class="form-group">
+                                            <label>Ha háztól házig kellene szállítani?</label>
+                                            <input class="form-control" name="price_for_driver_per_month_door_2_door" type="text"/>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-group">
+                                            <label>Ha adott pontig (Tesco, Pályaudvar, stb.) kellene szállítani?</label>
+                                            <input class="form-control" name="price_for_driver_per_month_to_point" type="text"/>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <label>Tegyük fel egy kollégád rendszeresen segít kényelmesen munkába- és hazajárni. Mennyit fizetnél havonta ezért neki?</label>
+                                <ol>
+                                    <li>
+                                        <div class="form-group">
+                                            <label>Ha háztól házig vinne?</label>
+                                            <input class="form-control" name="price_as_pass_per_month_door_2_door" type="text"/>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="form-group">
+                                            <label>Ha adott pontig (Tesco, Pályaudvar, stb.) vinne?</label>
+                                            <input class="form-control" name="price_as_pass_per_month_to_point" type="text"/>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <div class="form-group">
+                                    <label>Van-e bármi, amit el szeretnél mondani a céges útmegosztással kapcsolatban?</label>
+                                    <input class="form-control" name="comments" type="text"/>
+                                </div>
+                            </li>
                         </ol>
                         <div class="col-lg-12 text-center">
-                            <input type="submit" value="Elküldés" class="btn
+                            <input type="submit" id="submit1" value="Elküldés" class="btn
                             btn-xl" onclick="checkSurveyForm();return false;">
                         </div>
                     </div>
